@@ -7,7 +7,7 @@ RUN apt-get update && apt-get upgrade -y --no-install-recommends \
 	&& tar -xf wkhtmltox-0.12.4_linux-generic-amd64.tar.xz \
 	&& cp wkhtmltox/bin/* /usr/local/bin \
 	&& rm -rf wkhtmltox* \
-	&& apt-get purge -y wget xz-utils \
+	&& apt-get purge -y --auto-remove wget xz-utils \
 	&& rm -rf /var/lib/apt/lists/*
 
 CMD ["wkhtmltopdf"]
